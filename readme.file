@@ -1,0 +1,68 @@
+Chat with PDF using AWS Bedrock 💁
+This project allows you to interact with PDF documents using a chat interface powered by AWS Bedrock. The application uses machine learning models to answer questions based on the content of the provided PDF files and provides an option to save the chat output to a PDF file.
+
+Features
+Data Ingestion: Load and preprocess PDF documents for querying.
+Vector Store: Create and store vector embeddings of the document text.
+Machine Learning Models: Utilize different models (Claude, LLaMA2) to generate answers.
+PDF Generation: Save chat outputs to a PDF file for download.
+Installation
+Prerequisites
+Python 3.6+
+AWS account with necessary permissions
+Streamlit
+boto3
+fpdf
+langchain
+Steps
+Clone the repository:
+
+bash
+Copy code
+git clone https://github.com/your_username/chat-with-pdf-aws-bedrock.git
+cd chat-with-pdf-aws-bedrock
+Create a virtual environment:
+
+bash
+Copy code
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+Install the dependencies:
+
+bash
+Copy code
+pip install -r requirements.txt
+Set up AWS credentials:
+
+Ensure your AWS credentials and region are correctly configured. You can do this by setting environment variables or using the AWS CLI.
+
+bash
+Copy code
+aws configure
+Run the application:
+
+bash
+Copy code
+streamlit run app.py
+Configuration
+Ensure you have a .env file in the root directory of your project with the following content:
+
+makefile
+Copy code
+AWS_ACCESS_KEY_ID=your_access_key_id
+AWS_SECRET_ACCESS_KEY=your_secret_access_key
+AWS_DEFAULT_REGION=your_default_region
+Usage
+Upload PDFs: Place your PDF files in the data directory.
+Start the App: Run the Streamlit application using the command mentioned above.
+Interact: Use the sidebar to update or create the vector store and then ask questions using the input box.
+Save Output: After generating an output, click the "Save to PDF" button to download the chat output as a PDF file.
+Code Structure
+app.py: Main application script.
+requirements.txt: List of dependencies.
+data/: Directory to store PDF files.
+Dependencies
+streamlit: Web framework for interactive applications.
+boto3: AWS SDK for Python.
+fpdf: Library to create PDF files.
+langchain: Library for handling language models.
